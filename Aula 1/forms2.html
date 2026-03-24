@@ -1,0 +1,67 @@
+﻿<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Validação de formulários 2</title>
+</head>
+
+<body>	
+
+	<h1>Exercício de Validação de Formulários</h1>
+
+	<form id="f" method="post" action="#">
+        
+        <label for="nome"> Nome: </label>
+        <input type="text" id="nome" size="40" maxlength="40" />
+        
+        <br />
+        
+        <label for="email"> E-mail: </label>
+        <input type="text" id="email" size="40" />
+        
+        <br />
+        
+        <label for="dia"> Data de Nascimento: </label>
+        <input type="text" id="dia" size="2" maxlength="2"/>
+        / 
+        <input type="text" id="mes" size="2" maxlength="2"/>
+        /
+        <input type="text" id="ano" size="4" maxlength="4"/>
+        
+        <br />
+        
+        <input type="submit" id="enviar" value="   Enviar   " />
+        
+        <br />
+        
+        <input type="reset" id="limpar" value="   Limpar   " />
+        
+        <br />                
+        
+    </form>
+    
+    <br />
+    <hr />
+    
+    <h2> Regras para validação </h2>
+
+	<!-- Caso alguma das regras abaixo não seja satisfeita, deverá ser exibida uma mensagem para o usuário e dado foco ao campo que seja inválido. -->
+    
+    <ul>
+    	<li> O nome não pode estar vazio. </li>
+        <li> O e-mail deve conter exatamente 1 caractere "@".</li>
+        <li> Os campos dia, mês e ano devem estar preenchidos. </li>
+        <li> O campo dia deve ter 2 dígitos.</li>
+        <li> O campo mes deve ter 2 dígitos.</li>
+        <li> O campo ano deve ter 4 dígitos.</li>
+        <li> Os campos dia, mês e ano devem ser numéricos.</li>
+        <li> Os campos dia, mês e ano devem formar uma data válida (<font color="#FF0000">DESAFIO</font>).</li>
+        <li> Deve existir tabulação automática nos campos dia, mês e ano (ao atingirem seu tamanho máximo deverão passar para o próximo campo automaticamente).</li>
+    </ul>
+                 
+</body>
+
+
+
+
+</html>

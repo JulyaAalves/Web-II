@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Validação de formulários 1</title>
+</head>
+<body>	
+
+
+	<h1>Exercício de Validação de Formulários</h1>
+
+	<form id="f" method="post" action="#">
+        
+        <label for="nome"> Nome: </label>
+        <input type="text" id="nome" size="40" maxlength="40" />
+        
+        <br />
+        
+        <label for="senha">Senha: </label>
+        <input type="password" id="senha" size="30"/>
+        
+        <br />
+        
+        <label for="confirmacao">Confirmação da Senha: </label>
+        <input type="password" id="confirmacao" size="30"/>
+        
+        <br />
+        
+        Sexo: 
+        
+        <input type="radio" name="sexo" id="sexo_m" value="M" /> <label for="sexo_m"> Masculino </label>
+        <input type="radio" name="sexo" id="sexo_f" value="F" /> <label for="sexo_f"> Feminino  </label>
+        
+        <br />
+        
+        <label for="obs"> Observações: </label> <br />
+        <textarea id="obs" maxlength="200" cols="60" rows="10"></textarea>
+        
+        <br />
+        
+        <input type="submit" id="enviar" value="   Enviar   " />
+        
+        <br />
+        
+        <input type="reset" id="limpar" value="   Limpar   " />
+        
+        <br />                
+        
+    </form>
+        
+    <br />
+    <hr />    
+    
+    <h2> Regras para validação </h2>
+  Caso alguma das regras abaixo não seja satisfeita, deverá ser exibida uma mensagem para o usuário e dado foco ao campo que seja inválido. 
+    
+    <ul>
+    	<li> O nome deve ter no mínimo 3 caracteres. </li>
+        <li> A senha não pode estar vazia.</li>
+        <li> A senha deve ter no mínimo 6 caracteres </li>
+        <li> A confirmação da senha não pode estar vazia. </li>
+        <li> A confirmação da senha deve ter no mínimo 6 caracteres </li>
+        <li> A senha e sua confirmação devem ser iguais.</li>
+        <li> O usuário deve possuir um sexo. </li>
+        <li> As observações devem ter no mínimo 5 caracteres.</li>    
+    </ul>
+            
+    <script>
+        document.getElementById("f").onsubmit = function(event) {
+        
+            let nome = document.getElementById("nome");
+            let senha = document.getElementById("senha");
+            let confirmacao = document.getElementById("confirmacao");
+            let sexoM = document.getElementById("sexo_m");
+            let sexoF = document.getElementById("sexo_f");
+            let obs = document.getElementById("obs");
+        
+            if (nome.value.trim().length < 3) {
+                alert("O nome deve ter no mínimo 3 caracteres");
+                nome.focus();
+                event.preventDefault();
+                return;
+            }
+        
+            if (senha.value.trim() === "") {
+                alert("A senha não pode estar vazia");
+                senha.focus();
+                event.preventDefault();
+                return;
+            }
+        
+            if (senha.value.trim().length < 6) {
+                alert("A senha deve ter no mínimo 6 caracteres");
+                senha.focus();
+                event.preventDefault();
+                return;
+            }
+        
+            if (confirmacao.value.trim() === "") {
+                alert("A confirmação não pode estar vazia");
+                confirmacao.focus();
+                event.preventDefault();
+                return;
+            }
+        
+            if (confirmacao.value.trim().length < 6) {
+                alert("A confirmação deve ter no mínimo 6 caracteres");
+                confirmacao.focus();
+                event.preventDefault();
+                return;
+            }
+        
+            if (senha.value !== confirmacao.value) {
+                alert("As senhas devem ser iguais");
+                confirmacao.focus();
+                event.preventDefault();
+                return;
+            }
+        
+            if (!sexoM.checked && !sexoF.checked) {
+                alert("Selecione um sexo");
+                sexoM.focus();
+                event.preventDefault();
+                return;
+            }
+        
+            if (obs.value.trim().length < 5) {
+                alert("As observações devem ter no mínimo 5 caracteres");
+                obs.focus();
+                event.preventDefault();
+                return;
+            }
+        
+        }
+        </script>
+</body>
+
+</html>

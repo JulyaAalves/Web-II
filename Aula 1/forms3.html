@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Validação de formulários 3</title>
+</head>
+<body>	
+
+	<h1>Exercício de Validação de Formulários</h1>
+
+	<form id="f" method="post" action="#">
+        
+        <fieldset>
+ 			<legend> Dados gerais </legend>       
+            
+            <label for="nome"> Nome: </label>
+            <input type="text" id="nome" size="40" maxlength="40" />
+            
+            <br />           
+            
+            <label for="curso"> Selecione seu curso: </label>
+            <select id="curso">
+            	<option value="vazio"> </option>
+                <option value="info"> Informática </option>
+                <option value="adm"> Adminstração </option>
+                <option value="agro" > Agroecologia </option>
+            </select>
+        
+        </fieldset>
+               
+        <fieldset>
+        	<legend> Qual dos perídos você achou mais fácil? </legend>
+        	
+            <input type="checkbox" name="faceis" id="p1" value="p1"/> 
+            <label for="p1"> 1º Período </label>
+            <br />
+            <input type="checkbox" name="faceis" id="p2" value="p2"/> 
+            <label for="p2"> 2º Período </label>
+            <br />
+            <input type="checkbox" name="faceis" id="p3" value="p3"/> 
+            <label for="p3"> 3º Período </label>            
+            <br />            
+            <input type="button" id="btTodos" value="Todos" />
+            <input type="button" id="btNenhum" value="Nenhum" />
+            
+        </fieldset>
+        
+        <input type="submit" id="enviar" value="   Enviar   " />
+        
+        <br />
+        
+        <input type="reset" id="limpar" value="   Limpar   " />
+        
+        <br />                
+        
+    </form>
+    
+    <br />
+    <hr />
+    
+    <h2> Regras para validação </h2>
+
+	<!-- Caso alguma das regras abaixo não seja satisfeita, deverá ser exibida uma mensagem para o usuário e dado foco ao campo que seja inválido. -->
+    
+    <ul>
+    	<li> O nome não pode estar vazio. </li>
+        <li> Pelo menos um curso deve estar selecionado.</li>
+        <li> Ao clicar no botão "Todos", todos os períodos devem ser marcados.</li>
+        <li> Ao clicar no botão "Nenhum", todos os períodos devem ser desmarcados.</li>
+    </ul>
+                 
+</body>
+
+
+
+
+</html>
